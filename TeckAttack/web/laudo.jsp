@@ -35,5 +35,11 @@
               <a href="#" class="card-link">Baixe aqui</a>
             </div>
          </div>
+        <footer>
+            <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
+                <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
+                <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
+            </p>
+        </footer>
     </body>
 </html>

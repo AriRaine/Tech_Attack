@@ -26,5 +26,11 @@
        <hr>
         <!-- Example of a form that Dropzone can take over -->
         <form action="/target" class="dropzone"></form>
+        <footer>
+            <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
+                <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
+                <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
+            </p>
+        </footer>
     </body>
 </html>
