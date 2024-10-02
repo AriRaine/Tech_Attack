@@ -46,7 +46,7 @@ nav > a {
 }
 
 header h1 {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 header p {
@@ -75,16 +75,13 @@ main {
   margin: 2rem 0;
   background-image: linear-gradient(to bottom, var(--cor3), var(--cor1));
 }
-.login {
+
+.login, .row, .card {
     border: 2px solid var(--cor2);
     padding: 30px;
     border-radius: 10px 10px;
 }
-.card {
-    border: 2px solid var(--cor2);
-    padding: 30px;
-    border-radius: 10px 10px;
-}
+
 small {
   display: block;
   text-align: center;
