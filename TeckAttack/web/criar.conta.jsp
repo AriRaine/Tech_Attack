@@ -17,47 +17,47 @@
     <body>
         <nav
             <%@include file="WEB-INF/jspf/menu.jspf" %>
-        </nav>
-        <header>
-            <h1 style="margin-bottom: 40px; margin-top: 20px">Criar conta</h1>
-        </header>
-        <main>
-            <form class="row g-3">
-                <div class="col-12">
-                  <label for="inputFirstName" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="inputFirstName" placeholder="Maria">
-                </div>
-                <div class="col-12">
-                  <label for="inputLastName" class="form-label">Sobrenome</label>
-                  <input type="text" class="form-control" id="inputLastName" placeholder="Aparecida da Silva">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Senha</label>
-                  <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Mostrar senha
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary">
-                      <i class="bi bi-send"></i> Enviar
-                  </button>
-                </div>
-              </form>
-        </main>
-        <footer>
-            <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
-                <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
-                <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
-            </p>
-        </footer>
-    </body>
+    </nav>
+    <header>
+        <h1 style="margin-bottom: 40px; margin-top: 20px">Criar conta</h1>
+    </header>
+    <main>
+        <form class="row g-3">
+            <div class="col-12">
+                <label for="inputFirstName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Maria">
+            </div>
+            <div class="col-12">
+                <label for="inputLastName" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Aparecida da Silva">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Mostrar senha
+                </label>
+            </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-send"></i> Enviar
+                </button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
+            <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
+            <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
+        </p>
+    </footer>
+</body>
 </html>

@@ -17,29 +17,29 @@
     <body>
         <nav
             <%@include file="WEB-INF/jspf/menu.jspf" %>
-         </nav>
-        <h1>Laudo</h1>
-        <div class="card" style="width: 38rem" >
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Eletrocardiograma</li>
-              <li class="list-group-item">Paciente:</li>
-              <li class="list-group-item">Data do exame:</li>
-            </ul>
-            <div class="card-body">
-              <a href="#" class="card-link">Laudo PDF</a>
-              <a href="#" class="card-link">Baixe aqui</a>
-            </div>
-         </div>
-        <footer>
-            <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
-                <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
-                <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
-            </p>
-        </footer>
-    </body>
+    </nav>
+    <h1>Laudo</h1>
+    <div class="card" style="width: 38rem" >
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Eletrocardiograma</li>
+            <li class="list-group-item">Paciente:</li>
+            <li class="list-group-item">Data do exame:</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Laudo PDF</a>
+            <a href="#" class="card-link">Baixe aqui</a>
+        </div>
+    </div>
+    <footer>
+        <p>Software criado por <a href="https://github.com/tatcom23" target="_blank">Tatiana</a>, 
+            <a href="https://github.com/AriRaine" target="_blank">Larissa</a> e 
+            <a href="https://github.com/BeatrizS97" target="_blank">Beatriz</a>
+        </p>
+    </footer>
+</body>
 </html>
