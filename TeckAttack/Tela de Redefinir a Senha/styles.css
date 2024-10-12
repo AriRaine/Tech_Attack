@@ -1,0 +1,56 @@
+body {
+    background: url('background-image.png') no-repeat center center fixed; /* Substitua 'background-image.png' pelo caminho da sua imagem PNG */
+    background-size: cover;
+    font-family: 'Times New Roman', serif;
+}
+
+header h1 {
+    margin-bottom: 40px;
+    color: #2d7abf; /* Azul similar ao do login */
+}
+
+.navbar {
+    background-color: #1638a7; /* Azul correspondente ao botão de enviar */
+}
+
+.navbar-brand, .nav-link {
+    color: rgb(243, 238, 238) !important; /* Texto preto na navbar */
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #00CED1 !important; /* Verde água ao passar o mouse */
+}
+
+.form-wrapper {
+    max-width: 450px; /* Diminuído para centralizar e focar no formulário */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    padding: 30px;
+    margin: 0 auto; /* Centralizar horizontalmente */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+}
+
+footer p {
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer a {
+    text-decoration: none;
+    color: #08a8b9;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #124a7b;
+    color: rgb(37, 93, 137);
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1c5e8a;
+}
