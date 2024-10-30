@@ -24,14 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (newPassword === confirmPassword) {
             alert("Senha redefinida com sucesso!");
-            // Aqui você pode adicionar a lógica para enviar os dados para o servidor, se necessário
-            // Por exemplo: 
-            // fetch('/api/redefinir-senha', {
-            //     method: 'POST',
-            //     body: JSON.stringify({ email: inputEmail.value, newPassword }),
-            //     headers: { 'Content-Type': 'application/json' }
-            // }).then(response => { /* ... */ });
-
             resetPasswordForm.reset(); // Limpa o formulário após o envio
         } else {
             alert("As senhas não correspondem. Tente novamente.");
