@@ -1,14 +1,11 @@
 // Serve para simular os emails cadastrados
 const emailsCadastrados = ['exemplo@dominio.com','teste@dominio.com'];
 
+// Mostrar ou ocultar a senha
 document.getElementById('showPasswordCheckbox').addEventListener('change', function() {
-    const passwordField = document.getElementById('inputPassword4');
-    if (this.checked) {
-        passwordField.type = 'text';
-    } else {
-        passwordField.type = 'password';
-    }
-});
+   const passwordField = document.getElementById('inputPassword4');
+   passwordField.type = this.checked ? 'text' : 'password'; // Altera o tipo de input
+   });
 
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
