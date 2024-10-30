@@ -1,9 +1,8 @@
-document.getElementById('showPassword').addEventListener('change', function() {
-    const passwordInput = document.getElementById('password');
-    if (this.checked) {
-        passwordInput.type = 'text'; // Mostra a senha
-    } else {
-        passwordInput.type = 'password'; // Oculta a senha
+// Mostrar ou ocultar senha
+document.getElementById('showPasswordCheckbox').addEventListener('change', function() {
+    const passwordField = document.getElementById('inputPassword');
+    if (passwordField){
+    passwordField.type = this.checked ? 'text' : 'password'; // Atualiza o tipo do campo de senha
     }
 });
 
