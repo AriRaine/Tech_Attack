@@ -16,7 +16,7 @@
     <body>
 <%@include file="WEB-INF/jspf/menu.jspf" %>
     <header class="text-center mt-4">
-        <h1>Criar Conta</h1>
+        <h1>Cadastro Funcionário</h1>
     </header>
     
     <main class="container mt-5">
@@ -29,6 +29,10 @@
                 <div class="col-12">
                     <label for="inputLastName" class="form-label">Sobrenome</label>
                     <input type="text" class="form-control" id="inputLastName" placeholder="Silva Santos">
+                </div>
+                <div class="col-12">
+                    <label for="inputCode" class="form-label">Registro do Funcionário</label>
+                    <input type="text" class="form-control" id="inputCode" placeholder="1234">
                 </div>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">E-mail</label>
@@ -78,6 +82,7 @@
             const lastName = document.getElementById('inputLastName').value;
             const email = document.getElementById('inputEmail4').value;
             const password = document.getElementById('inputPassword4').value;
+            const registro = document.getElementById('inputCode').value;
 
             // Verificação se o e-mail já foi cadastrado
             if (emailsCadastrados.includes(email)) {
@@ -86,7 +91,7 @@
                 return;
             }
 
-            if (firstName && lastName && email && password) {
+            if (firstName && lastName && email && password && registro) {
                 alert('Cadastro realizado com sucesso!');
                 // Redirecionar para a página de login ou outra página desejada
                 window.location.href = 'login.html';
