@@ -28,16 +28,16 @@
         </main>
 
         <%@ include file="WEB-INF/jspf/footer.jspf" %>
-       
+
     </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-        <script>
-            Dropzone.options.uploadForm = {
-                paramName: "file",
-                maxFilesize: 2,
-                acceptedFiles: ".jpeg,.jpg,.png,.pdf",
-                dictDefaultMessage: "Arraste e solte os arquivos aqui para fazer o upload ou clique para selecionar."
-            };
-        </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<script>
+    Dropzone.options.uploadForm = {
+        paramName: "file",
+        maxFilesize: 2,
+        acceptedFiles: ".jpeg,.jpg,.png,.pdf",
+        dictDefaultMessage: "Arraste e solte os arquivos aqui para fazer o upload ou clique para selecionar."
+    };
+</script>
