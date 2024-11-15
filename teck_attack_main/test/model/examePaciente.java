@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class examePaciente {
@@ -13,6 +14,8 @@ public class examePaciente {
     private double peso;
     private double altura;
     private String url_img;
+
+    public static ArrayList<examePaciente> list = new ArrayList<>();
 
     public examePaciente(String nomeCompleto, int cpf, Date dataNascimento, String endereço, int telefone, String emailPaciente, double peso, double altura, String url_img) {
         this.nomeCompleto = nomeCompleto;
