@@ -1,0 +1,17 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="card" style="width: 18rem; margin: 50px auto 0; width: 80%; max-width: 600px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <div class="card-body">
+        <h5 class="card-title">Identificação</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Use este formulário para identificar-se no sistema</h6>
+        <form>
+            <div class="mb-3">
+                <label for="forName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="formName" name="session-name">
+                <hr>
+                <input type="submit" name="session-login" class="btn btn-primary"/>
+            </div>       
+        </form>
+    </div>
+</div>
