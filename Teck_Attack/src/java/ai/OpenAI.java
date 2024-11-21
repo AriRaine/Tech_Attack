@@ -50,7 +50,7 @@ public class OpenAI {
 
     public static void main(String[] args) {
         try {
-            System.out.println(OpenAI.getCompletion("Em uma frase, o palmeiras tem mundial"));
+            System.out.println(OpenAI.getCompletion("Em uma frase, o Sao Paulo tem mundial e libertadores"));
         } catch (Exception ex) {
             System.out.println("ERRO: " + ex.getLocalizedMessage());
         }

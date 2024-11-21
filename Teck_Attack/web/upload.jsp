@@ -4,7 +4,7 @@
     Author     : tatiane
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +22,10 @@
         </header>
 
         <main class="container mt-5 form-wrapper">
-            <form action="/target" class="dropzone" id="uploadForm"></form>
+            <!-- A classe Dropzone transforma esse formulário em uma área de upload com drag-and-drop -->
+            <form action="UploadServlet" class="dropzone" id="uploadForm" enctype="multipart/form-data">
+                <!-- Aqui o Dropzone vai criar a área de arraste para arquivos -->
+            </form>
         </main>
         <%}%>
 
@@ -33,10 +36,27 @@
 
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script>
+    // Configurações do Dropzone
     Dropzone.options.uploadForm = {
-        paramName: "file",
-        maxFilesize: 2,
-        acceptedFiles: ".jpeg,.jpg,.png,.pdf",
-        dictDefaultMessage: "Arraste e solte os arquivos aqui para fazer o upload ou clique para selecionar."
+        paramName: "file", // Nome do parâmetro que será enviado ao servidor
+        maxFilesize: 10, // Tamanho máximo do arquivo (em MB)
+        acceptedFiles: ".jpeg,.jpg,.png,.pdf", // Tipos de arquivos aceitos
+        dictDefaultMessage: "Arraste e solte os arquivos aqui para fazer o upload ou clique para selecionar.", // Mensagem padrão
+        init: function () {
+            // Callback após o upload bem-sucedido
+            this.on("success", function (file, response) {
+                // Aqui você pode manipular a resposta do servidor (URL do arquivo, por exemplo)
+                if (response.url) {
+                    alert("Arquivo enviado com sucesso! URL: " + response.url);
+                } else {
+                    alert("Erro no upload: " + response.error);
+                }
+            });
+
+            // Callback de erro
+            this.on("error", function (file, errorMessage) {
+                alert("Erro ao fazer o upload: " + errorMessage);
+            });
+        }
     };
 </script>

@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package api;
+package model;
 
-import model.Cadastro;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,6 +14,8 @@ import model.Cadastro;
 public class Medico extends Cadastro {
 
     private String crm;
+
+    public static List<Medico> list = new ArrayList<>();
 
     public Medico(String nome, String sobrenome, String email, String senha, String crm) {
         super(nome, sobrenome, email, senha);

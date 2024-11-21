@@ -9,8 +9,6 @@ public abstract class Cadastro {
     private String email;
     private String senha;
 
-    // Lista estática para armazenar todos os cadastros (Medico e Funcionario)
-    public static List<Cadastro> list = new ArrayList<>();
 
     public Cadastro(String nome, String sobrenome, String email, String senha) {
         this.nome = nome;
