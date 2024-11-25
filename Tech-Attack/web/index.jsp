@@ -1,21 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ferramenta de An√°lise de ECG</title>
+        <title>Ferramenta de An·lise de ECG</title>
         <%@include file="WEB-INF/jspf/html-head-libs.jspf" %>
         <%@include file="WEB-INF/jspf/_navbar.jspf" %>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: serif;
                 margin: 0;
                 padding: 0;
                 background: #f4f4f9;
             }
 
             header {
-                background: linear-gradient(135deg, #004a99, #0066cc);
+                background: linear-gradient(135deg, #000080, #004a99);
                 color: white;
                 padding: 30px 15%;
                 text-align: center;
@@ -41,11 +40,24 @@
                 text-transform: uppercase;
                 font-weight: bold;
                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-                color: white;
+                color: #ffffff;
+                animation: growShrink 5s infinite ease-out; 
+            }
+
+            @keyframes growShrink {
+                0% {
+                    transform: scale(1); /* Tamanho original */
+                }
+                50% {
+                    transform: scale(1.2); /* Aumenta o tamanho */
+                }
+                100% {
+                    transform: scale(1); /* Retorna ao tamanho original */
+                }
             }
 
             header p {
-                font-size: 18px;
+                font-size: 22px;
                 margin-top: 10px;
                 font-weight: 400;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -53,7 +65,7 @@
             }
 
             main {
-                padding: 40px 15%;
+                padding: 25px 15%;
                 line-height: 1.8;
                 color: #333;
             }
@@ -93,12 +105,12 @@
             footer {
                 background-color: #004a99;
                 color: white;
-                padding: 10px 0; /* Diminui o padding */
+                padding: 10px 0;
                 text-align: center;
                 position: relative;
                 bottom: 0;
                 width: 100%;
-                border-top: 3px solid #333; /* Ajusta o contorno superior do rodap√© */
+                border-top: 3px solid #333;
             }
 
             .cta-button {
@@ -139,35 +151,35 @@
     </head>
     <body>
         <header>
-            <h1>Ferramenta de An√°lise de ECG</h1>
-            <p>Agilidade e precis√£o na an√°lise de eletrocardiogramas</p>
+            <h1>Ferramenta de An·lise de ECG</h1>
+            <p>Agilidade e precis„o na an·lise de eletrocardiogramas</p>
         </header>
         <main>
             <section>
-                <h2>Bem-vindo(a) √† nossa Ferramenta</h2>
+                <h2>Bem-vindo(a) ‡ nossa Ferramenta</h2>
                 <p>
-                    Nossa plataforma foi projetada para automatizar o processamento e a an√°lise de eletrocardiogramas (ECG), facilitando a gera√ß√£o de laudos preliminares com alta precis√£o.
-                    Com o objetivo de aprimorar a efici√™ncia dos profissionais de sa√∫de, oferecemos funcionalidades como:
+                    Nossa plataforma foi projetada para automatizar o processamento e a an·lise de eletrocardiogramas (ECG), facilitando a geraÁ„o de laudos preliminares com alta precis„o.
+                    Com o objetivo de aprimorar a eficiÍncia dos profissionais de sa˙de, oferecemos funcionalidades como:
                 </p>
                 <ul>
                     <li>Upload de imagens de ECG nos formatos JPG, PNG e PDF</li>
-                    <li>An√°lise autom√°tica com identifica√ß√£o de ritmos card√≠acos e anomalias</li>
-                    <li>Gera√ß√£o de laudos preliminares completos</li>
-                    <li>Perfis espec√≠ficos para pacientes, m√©dicos e gestores de sa√∫de</li>
-                    <li>Integra√ß√£o com sistemas de prontu√°rio eletr√¥nico</li>
+                    <li>An·lise autom·tica com identificaÁ„o de ritmos cardÌacos e anomalias</li>
+                    <li>GeraÁ„o de laudos preliminares completos</li>
+                    <li>Perfis especÌficos para pacientes, mÈdicos e gestores de sa˙de</li>
+                    <li>IntegraÁ„o com sistemas de prontu·rio eletrÙnico</li>
                 </ul>
             </section>
             <section>
                 <h2>Objetivo do Projeto</h2>
                 <p>
-                    Nosso objetivo principal √© otimizar o processo de an√°lise de ECGs, reduzindo o tempo de resposta e aumentando a precis√£o dos laudos m√©dicos. 
-                    Al√©m disso, promovemos a interoperabilidade no setor de sa√∫de ao integrar nossa ferramenta com outros sistemas.
+                    Nosso objetivo principal È otimizar o processo de an·lise de ECGs, reduzindo o tempo de resposta e aumentando a precis„o dos laudos mÈdicos. 
+                    AlÈm disso, promovemos a interoperabilidade no setor de sa˙de ao integrar nossa ferramenta com outros sistemas.
                 </p>
             </section>
             <section>
                 <h2>Destaques</h2>
                 <p>
-                    A aplica√ß√£o √© acess√≠vel via navegador, sem necessidade de instala√ß√£o, e foi desenvolvida com as melhores pr√°ticas de acessibilidade para atender a todos os usu√°rios, incluindo aqueles com defici√™ncias.
+                    A aplicaÁ„o È acessÌvel via navegador, sem necessidade de instalaÁ„o, e foi desenvolvida com as melhores pr·ticas de acessibilidade para atender a todos os usu·rios, incluindo aqueles com deficiÍncias.
                 </p>
             </section>
             <a href="upload.jsp" class="cta-button">Experimente Agora</a>
