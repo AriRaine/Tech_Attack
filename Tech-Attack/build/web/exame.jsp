@@ -105,7 +105,7 @@
             emailPaciente,
             peso,
             altura,
-            url_img,
+            url_img
         };
 
         // Enviar os dados para o servlet

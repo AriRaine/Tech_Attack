@@ -54,7 +54,7 @@ public class OpenAI {
 
     public static void main(String[] args) {
         try {
-            System.out.println(OpenAI.getCompletion("existe alguma forma que eu possa te enviar uma imagem para ser analisada?"));
+            System.out.println(OpenAI.getCompletion("Como estudar eficiente"));
         } catch (Exception ex) {
             System.out.println("ERRO: " + ex.getLocalizedMessage());
         }
