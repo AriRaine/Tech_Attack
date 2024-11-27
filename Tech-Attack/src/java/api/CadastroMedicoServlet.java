@@ -4,6 +4,7 @@
  */
 package api;
 
+import BD.ConexaoSQLite;
 import model.Medico;
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -12,8 +13,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import org.json.JSONObject;
 import org.json.JSONArray;
+import org.json.JSONException;
 
 @WebServlet(name = "CadastroMedicoServlet", urlPatterns = {"/CadastroMedicoServlet"})
 public class CadastroMedicoServlet extends HttpServlet {
@@ -57,9 +61,25 @@ public class CadastroMedicoServlet extends HttpServlet {
             String senha = body.getString("senha");
             String crm = body.getString("crm");
 
-            Medico medico;
+            // Criar Medico
+            Medico medico = new Medico(nome, sobrenome, email, senha, crm);
 
-            medico = new Medico(nome, sobrenome, email, senha, crm);
+            String sql = "INSERT INTO Medico (crm, nome, sobrenome, email, senha) VALUES (?, ?, ?, ?, ?)";
+
+            try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+
+                pstmt.setString(1, crm);
+                pstmt.setString(2, nome);
+                pstmt.setString(3, sobrenome);
+                pstmt.setString(4, email);
+                pstmt.setString(5, senha);
+
+                pstmt.executeUpdate();
+                System.out.println("Médico inserido com sucesso!");
+
+            } catch (Exception e) {
+                System.err.println("Erro ao inserir médico: " + e.getMessage());
+            }
 
             Medico.list.add(medico);
 
@@ -77,7 +97,7 @@ public class CadastroMedicoServlet extends HttpServlet {
 
             file.put("list", jsonList);
 
-        } catch (Exception ex) {
+        } catch (IOException | JSONException ex) {
             response.setStatus(500);
             file.put("error", ex.getMessage());
         }
@@ -147,7 +167,7 @@ public class CadastroMedicoServlet extends HttpServlet {
                 response.setStatus(200); // OK
             }
 
-        } catch (Exception ex) {
+        } catch (IOException | JSONException ex) {
             response.setStatus(500); // Internal Server Error
             file.put("error", ex.getLocalizedMessage());
         }
@@ -202,7 +222,7 @@ public class CadastroMedicoServlet extends HttpServlet {
                 response.setStatus(200); // OK
             }
 
-        } catch (Exception ex) {
+        } catch (IOException | JSONException ex) {
             response.setStatus(500); // Internal Server Error
             file.put("error", ex.getLocalizedMessage());
         }

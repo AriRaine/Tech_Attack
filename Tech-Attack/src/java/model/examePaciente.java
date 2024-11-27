@@ -5,24 +5,24 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class examePaciente {
 
     private String nomeCompleto;
     private int cpf;
-    private Date dataNascimento;
+    private String dataNascimento;
     private String endereco;
-    private int telefone;
+    private String telefone;
     private String emailPaciente;
     private double peso;
     private double altura;
     private String url_img;
+    private String registroFuncionario;
 
     public static ArrayList<examePaciente> list = new ArrayList<>();
 
     // Construtor principal
-    public examePaciente(String nomeCompleto, int cpf, Date dataNascimento, String endereco, int telefone, String emailPaciente, double peso, double altura, String url_img) {
+    public examePaciente(String nomeCompleto, int cpf, String dataNascimento, String endereco, String telefone, String emailPaciente, double peso, double altura, String url_img, String registroFuncionario) {
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -32,10 +32,11 @@ public class examePaciente {
         this.peso = peso;
         this.altura = altura;
         this.url_img = url_img;
+        this.registroFuncionario = registroFuncionario;
     }
 
     // Construtor alternativo sem CPF
-    public examePaciente(String nomeCompleto, Date dataNascimento, String endereco, int telefone, String emailPaciente, double peso, double altura, String url_img) {
+    public examePaciente(String nomeCompleto, String dataNascimento, String endereco, String telefone, String emailPaciente, double peso, double altura, String url_img) {
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
@@ -63,11 +64,11 @@ public class examePaciente {
         this.cpf = cpf;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -79,11 +80,11 @@ public class examePaciente {
         this.endereco = endereco;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -117,5 +118,13 @@ public class examePaciente {
 
     public void setUrl_img(String url_img) {
         this.url_img = url_img;
+    }
+    
+    public String getRegistroFuncionario() {
+        return registroFuncionario;
+    }
+
+    public void setRegistroFuncionario(String registroFuncionario) {
+        this.registroFuncionario = registroFuncionario;
     }
 }

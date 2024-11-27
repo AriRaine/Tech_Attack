@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputBirthday" class="form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="inputBirthday" name="dataNascimento" placeholder="yyyy-MM-dd" required>
+                    <input type="text" class="form-control" id="inputBirthday" name="dataNascimento" placeholder="yyyy-MM-dd" required>
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Endereço</label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-12">
                     <label for="inputPhone" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" id="inputPhone" name="telefone" required>
+                    <input type="text" class="form-control" id="inputPhone" name="telefone" required>
                 </div>
                 <div class="col-12">
                     <label for="inputEmail4" class="form-label">Email</label>
@@ -56,6 +56,10 @@
                 <div class="col-12">
                     <label for="inputUrl_img" class="form-label">URL da imagem</label>
                     <input type="url" class="form-control" id="inputUrl_img" name="url_img" placeholder="imagem.com/imagem" required>
+                </div>
+                <div class="col-12">
+                    <label for="inputRegistroFuncionario" class="form-label">Registro Funcionário</label>
+                    <input type="text" class="form-control" id="inputRegistroFuncionario" name="url_img" required>
                 </div>
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary">
@@ -88,6 +92,7 @@
         const peso = document.getElementById('inputPeso').value;
         const altura = document.getElementById('inputAlt').value;
         const url_img = document.getElementById('inputUrl_img').value;
+        const registroFuncionario = document.getElementById('inputRegistroFuncionario').value;
 
         // Verificar se o email já está cadastrado
         if (emailsCadastrados.includes(emailPaciente)) {
@@ -105,7 +110,8 @@
             emailPaciente,
             peso,
             altura,
-            url_img
+            url_img,
+            registroFuncionario
         };
 
         // Enviar os dados para o servlet
