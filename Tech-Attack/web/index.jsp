@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html> 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ferramenta de An·lise de ECG</title>
-        <%@include file="WEB-INF/jspf/html-head-libs.jspf" %>
-        <%@include file="WEB-INF/jspf/_navbar.jspf" %>
+        <title>Ferramenta de An√°lise de ECG</title>
+        <%@include file="WEB-INF/jspf/html-head-libs.jspf" %> <!-- Inclus√£o de bibliotecas de cabe√ßalho -->
+        <%@include file="WEB-INF/jspf/_navbar.jspf" %> <!-- Inclus√£o da barra de navega√ß√£o -->
         <style>
             body {
-                font-family: serif;
+                font-family: 'Open Sans', Arial, sans-serif !important;
                 margin: 0;
                 padding: 0;
                 background: #f4f4f9;
@@ -41,18 +42,18 @@
                 font-weight: bold;
                 text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
                 color: #ffffff;
-                animation: growShrink 5s infinite ease-out; 
+                animation: growShrink 5s infinite ease-out;
             }
 
             @keyframes growShrink {
                 0% {
-                    transform: scale(1); /* Tamanho original */
+                    transform: scale(1);
                 }
                 50% {
-                    transform: scale(1.2); /* Aumenta o tamanho */
+                    transform: scale(1.2);
                 }
                 100% {
-                    transform: scale(1); /* Retorna ao tamanho original */
+                    transform: scale(1);
                 }
             }
 
@@ -151,40 +152,40 @@
     </head>
     <body>
         <header>
-            <h1>Ferramenta de An·lise de ECG</h1>
-            <p>Agilidade e precis„o na an·lise de eletrocardiogramas</p>
+            <h1 style="color:white">Ferramenta de An√°lise de ECG</h1>
+            <p>Agilidade e precis√£o na an√°lise de eletrocardiogramas</p>
         </header>
         <main>
             <section>
-                <h2>Bem-vindo(a) ‡ nossa Ferramenta</h2>
+                <h2>Bem-vindo(a) √† nossa Ferramenta</h2>
                 <p>
-                    Nossa plataforma foi projetada para automatizar o processamento e a an·lise de eletrocardiogramas (ECG), facilitando a geraÁ„o de laudos preliminares com alta precis„o.
-                    Com o objetivo de aprimorar a eficiÍncia dos profissionais de sa˙de, oferecemos funcionalidades como:
+                    Nossa plataforma foi projetada para automatizar o processamento e a an√°lise de eletrocardiogramas (ECG), facilitando a gera√ß√£o de laudos preliminares com alta precis√£o.
+                    Com o objetivo de aprimorar a efici√™ncia dos profissionais de sa√∫de, oferecemos funcionalidades como:
                 </p>
                 <ul>
                     <li>Upload de imagens de ECG nos formatos JPG, PNG e PDF</li>
-                    <li>An·lise autom·tica com identificaÁ„o de ritmos cardÌacos e anomalias</li>
-                    <li>GeraÁ„o de laudos preliminares completos</li>
-                    <li>Perfis especÌficos para pacientes, mÈdicos e gestores de sa˙de</li>
-                    <li>IntegraÁ„o com sistemas de prontu·rio eletrÙnico</li>
+                    <li>An√°lise autom√°tica com identifica√ß√£o de ritmos card√≠acos e anomalias</li>
+                    <li>Gera√ß√£o de laudos preliminares completos</li>
+                    <li>Perfis espec√≠ficos para pacientes, m√©dicos e gestores de sa√∫de</li>
+                    <li>Integra√ß√£o com sistemas de prontu√°rio eletr√¥nico</li>
                 </ul>
             </section>
             <section>
                 <h2>Objetivo do Projeto</h2>
                 <p>
-                    Nosso objetivo principal È otimizar o processo de an·lise de ECGs, reduzindo o tempo de resposta e aumentando a precis„o dos laudos mÈdicos. 
-                    AlÈm disso, promovemos a interoperabilidade no setor de sa˙de ao integrar nossa ferramenta com outros sistemas.
+                    Nosso objetivo principal √© otimizar o processo de an√°lise de ECGs, reduzindo o tempo de resposta e aumentando a precis√£o dos laudos m√©dicos. 
+                    Al√©m disso, promovemos a interoperabilidade no setor de sa√∫de ao integrar nossa ferramenta com outros sistemas.
                 </p>
             </section>
             <section>
                 <h2>Destaques</h2>
                 <p>
-                    A aplicaÁ„o È acessÌvel via navegador, sem necessidade de instalaÁ„o, e foi desenvolvida com as melhores pr·ticas de acessibilidade para atender a todos os usu·rios, incluindo aqueles com deficiÍncias.
+                    A aplica√ß√£o √© acess√≠vel via navegador, sem necessidade de instala√ß√£o, e foi desenvolvida com as melhores pr√°ticas de acessibilidade para atender a todos os usu√°rios, incluindo aqueles com defici√™ncias.
                 </p>
             </section>
             <a href="upload.jsp" class="cta-button">Experimente Agora</a>
         </main>
-        <%@include file="WEB-INF/jspf/footer.jspf" %>
-        <%@include file="WEB-INF/jspf/html-body-libs.jspf" %>
+        <%@include file="WEB-INF/jspf/footer.jspf" %> <!-- Inclus√£o do rodap√© -->
+        <%@include file="WEB-INF/jspf/html-body-libs.jspf" %> <!-- Inclus√£o de scripts de finaliza√ß√£o -->
     </body>
 </html>
