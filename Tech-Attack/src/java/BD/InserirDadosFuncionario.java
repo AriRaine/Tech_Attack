@@ -30,6 +30,6 @@ public class InserirDadosFuncionario {
     }
 
     public static void main(String[] args) {
-        inserirFuncionario("12345", "Ana", "Silva", "ana.silva@email.com", "senha123");
+        inserirFuncionario("12346", "Ana", "Silva", "ana@email.com", "senha123");
     }
 }

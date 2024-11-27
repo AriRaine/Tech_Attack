@@ -4,6 +4,7 @@
  */
 package api;
 
+import BD.ConexaoSQLite;
 import java.io.IOException;
 import java.io.BufferedReader;
 import jakarta.servlet.ServletException;
@@ -11,9 +12,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import model.examePaciente;
@@ -22,7 +22,7 @@ import org.json.JSONException;
 @WebServlet(name = "ExamePacienteServlet", urlPatterns = {"/ExamePacienteServlet"})
 public class ExamePacienteServlet extends HttpServlet {
 
-    private JSONObject getJSONBody(BufferedReader reader) throws Exception {
+    private JSONObject getJSONBody(BufferedReader reader) throws IOException {
         StringBuilder buffer = new StringBuilder();
         String line;
         while ((line = reader.readLine()) != null) {
@@ -49,37 +49,47 @@ public class ExamePacienteServlet extends HttpServlet {
         response.setContentType("application/json;charset=UTF-8");
         JSONObject file = new JSONObject();
         try {
-            JSONObject body = getJSONBody(request.getReader());
+            String jsonBody = request.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
+            JSONObject body = new JSONObject(jsonBody);
 
             String nomeCompleto = body.getString("nomeCompleto");
-            int cpf = body.optInt("cpf", 0);
-            String dataNascimentoStr = body.getString("dataNascimento");
+            int cpf = body.getInt("cpf");
+            String dataNascimento = body.getString("dataNascimento");
             String endereco = body.getString("endereco");
-            int telefone = body.getInt("telefone");
-            String emailPaciente = body.getString("emailPaciente");
+            String telefone = body.getString("telefone");
+            String email = body.getString("emailPaciente");
             double peso = body.getDouble("peso");
             double altura = body.getDouble("altura");
             String url_img = body.getString("url_img");
+            String registroFuncionario = body.getString("registroFuncionario");
 
-            Date dataNascimento;
-            try {
-                dataNascimento = new SimpleDateFormat("dd-MM-yyyy").parse(dataNascimentoStr);
-            } catch (ParseException e) {
-                throw new IllegalArgumentException("Formato de data inválido. Use 'yyyy-MM-dd'.");
-            }
+            examePaciente paciente = new examePaciente(nomeCompleto, cpf, dataNascimento, endereco, telefone, email, peso, altura, url_img, registroFuncionario);
 
-            examePaciente paciente;
-            if (cpf > 0) {
-                paciente = new examePaciente(nomeCompleto, cpf, dataNascimento, endereco, telefone, emailPaciente, peso, altura, url_img);
-            } else {
-                paciente = new examePaciente(nomeCompleto, dataNascimento, endereco, telefone, emailPaciente, peso, altura, url_img);
+            String sql = "INSERT INTO Exame (nomeCompleto, cpf, dataNascimento, endereco, telefone, email, peso, altura, url_img, registroFuncionario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+                pstmt.setString(1, nomeCompleto);
+                pstmt.setInt(2, cpf);
+                pstmt.setString(3, dataNascimento);
+                pstmt.setString(4, endereco);
+                pstmt.setString(5, telefone);
+                pstmt.setString(6, email);
+                pstmt.setDouble(7, peso);
+                pstmt.setDouble(8, altura);
+                pstmt.setString(9, url_img);
+                pstmt.setString(10, registroFuncionario);
+
+                pstmt.executeUpdate();
+                System.out.println("Exame inserido com sucesso!");
+            } catch (Exception e) {
+                System.err.println("Erro ao inserir exame: " + e.getMessage());
             }
 
             examePaciente.list.add(paciente);
+            
             file.put("list", new JSONArray(examePaciente.list));
             response.setStatus(201);
-
-        } catch (Exception ex) {
+        } catch (IOException | JSONException ex) {
             response.setStatus(500);
             file.put("error", ex.getLocalizedMessage());
         }
@@ -102,19 +112,11 @@ public class ExamePacienteServlet extends HttpServlet {
                     if (body.has("cpf")) {
                         exame.setCpf(body.getInt("cpf"));
                     }
-                    if (body.has("dataNascimento")) {
-                        try {
-                            Date dataNascimento = new SimpleDateFormat("dd-MM-yyyy").parse(body.getString("dataNascimento"));
-                            exame.setDataNascimento(dataNascimento);
-                        } catch (ParseException e) {
-                            throw new IllegalArgumentException("Formato de data inválido. Use 'yyyy-MM-dd'.");
-                        }
-                    }
                     if (body.has("endereco")) {
                         exame.setEndereco(body.getString("endereco"));
                     }
                     if (body.has("telefone")) {
-                        exame.setTelefone(body.getInt("telefone"));
+                        exame.setTelefone(body.getString("telefone"));
                     }
                     if (body.has("emailPaciente")) {
                         exame.setEmailPaciente(body.getString("emailPaciente"));
@@ -128,20 +130,22 @@ public class ExamePacienteServlet extends HttpServlet {
                     if (body.has("url_img")) {
                         exame.setUrl_img(body.getString("url_img"));
                     }
+                    if (body.has("registroFuncionario")) {
+                        exame.setUrl_img(body.getString("registroFuncionario"));
+                    }
                     encontrado = true;
                     break;
                 }
             }
 
             if (!encontrado) {
-                response.setStatus(404); // Not Found
+                response.setStatus(404);
                 file.put("error", "Paciente não encontrado.");
             } else {
                 file.put("list", new JSONArray(examePaciente.list));
-                response.setStatus(200); // OK
+                response.setStatus(200);
             }
-
-        } catch (Exception ex) {
+        } catch (IOException | JSONException ex) {
             response.setStatus(500);
             file.put("error", ex.getLocalizedMessage());
         }
@@ -155,17 +159,26 @@ public class ExamePacienteServlet extends HttpServlet {
         JSONObject file = new JSONObject();
         try {
             String nomeCompleto = request.getParameter("nomeCompleto");
-            int i = -1;
-            for (examePaciente exame : examePaciente.list) {
-                if (exame.getNomeCompleto().equals(nomeCompleto)) {
-                    i = examePaciente.list.indexOf(exame);
-                    break;
+            if (nomeCompleto == null || nomeCompleto.isEmpty()) {
+                response.setStatus(400);
+                file.put("error", "O parâmetro 'nomeCompleto' é obrigatório.");
+            } else {
+                int i = -1;
+                for (examePaciente exame : examePaciente.list) {
+                    if (exame.getNomeCompleto().equals(nomeCompleto)) {
+                        i = examePaciente.list.indexOf(exame);
+                        break;
+                    }
                 }
+                if (i > -1) {
+                    examePaciente.list.remove(i);
+                    file.put("message", "Paciente removido com sucesso.");
+                } else {
+                    response.setStatus(404);
+                    file.put("error", "Paciente não encontrado.");
+                }
+                file.put("list", new JSONArray(examePaciente.list));
             }
-            if (i > -1) {
-                examePaciente.list.remove(i);
-            }
-            file.put("list", new JSONArray(examePaciente.list));
         } catch (JSONException ex) {
             response.setStatus(500);
             file.put("error", ex.getLocalizedMessage());
