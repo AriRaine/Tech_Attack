@@ -1,5 +1,5 @@
 # Tech_Attack
-### Ferramenta de Análise de Eletrocardiogramas (ECG)
+# Ferramenta de Análise de Eletrocardiogramas (ECG)
 
 ## Índice
 1. [Descrição do Projeto](#descrição-do-projeto)
