@@ -20,14 +20,14 @@ O principal propósito da aplicação é agilizar e otimizar a análise de ECGs,
 ![Status](https://img.shields.io/badge/STATUS-em_desenvolvimento-blue)
 
 ## 4. Público-alvo
-  **Funcionários*: Usuários que farão o upload das imagens de ECG para análise.
-  **Médicos*: Profissionais de saúde que visualizarão os laudos e poderão validá-los.
+  *Funcionários*: Usuários que farão o upload das imagens de ECG para análise.
+  *Médicos*: Profissionais de saúde que visualizarão os laudos e poderão validá-los.
 
 ## 5. Funcionalidades
-  **Upload de Imagens de ECG*: Interface para upload de imagens em JPG, PNG e PDF.
-  **Análise Automática de ECG*: Utilização de IA para identificar alterações no ECG e gerar um laudo preliminar.
-  **Geração de Laudo Preliminar*: Laudo automaticamente gerado com base na análise do ECG.
-  **Integração com EMR*: Integração com prontuários eletrônicos para o registro dos laudos.
+  *Upload de Imagens de ECG*: Interface para upload de imagens em JPG, PNG e PDF.
+  *Análise Automática de ECG*: Utilização de IA para identificar alterações no ECG e gerar um laudo preliminar.
+  *Geração de Laudo Preliminar*: Laudo automaticamente gerado com base na análise do ECG.
+  *Integração com EMR*: Integração com prontuários eletrônicos para o registro dos laudos.
 
 ## 6. Tecnologias Utilizadas
   Frontend: HTML, CSS, JavaScript
