@@ -34,15 +34,15 @@
         </form>
 
         <!-- Resultado da análise -->
-        <div style="margin: 30px auto; width: 80%; max-width: 600px; text-align: center; padding: 20px;">
+        <div class="analysis-result-container">
             <% if (request.getAttribute("analysisResult") != null) { %>
-            <h2>Resultado da Análise:</h2>
-            <p><%= request.getAttribute("analysisResult") %></p>
+            <h2 class="analysis-title">Resultado da Análise:</h2>
+            <p class="analysis-content"><%= request.getAttribute("analysisResult") %></p>
             <% } else if (request.getAttribute("error") != null) { %>
-            <p style="color: red;"><%= request.getAttribute("error") %></p>
+            <p class="error-message"><%= request.getAttribute("error") %></p>
             <% } %>
-
         </div>
+
         <%}%>
 
         <%@include file="WEB-INF/jspf/footer.jspf" %>
@@ -57,3 +57,38 @@
             }
         </script>
     </body>
+    <style>
+        .analysis-result-container {
+            margin: 30px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: justify;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .analysis-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+        .analysis-content {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            white-space: pre-wrap; /* Mantém quebras de linha no texto */
+        }
+
+        .error-message {
+            font-size: 1.2em;
+            color: red;
+            font-weight: bold;
+        }
+
+
+    </style>
