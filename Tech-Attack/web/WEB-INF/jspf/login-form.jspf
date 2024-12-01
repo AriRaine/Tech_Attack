@@ -4,14 +4,61 @@
 <div class="card" style="width: 18rem; margin: 50px auto 0; width: 80%; max-width: 600px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
     <div class="card-body">
         <h5 class="card-title">Identificação</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Use este formulário para identificar-se no sistema</h6>
-        <form>
+        <form id="loginForm">
             <div class="mb-3">
-                <label for="forName" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="formName" name="session-name">
-                <hr>
-                <input type="submit" name="session-login" class="btn btn-primary"/>
-            </div>       
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Entrar"/>
+            <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
+                <a href="${pageContext.request.contextPath}/index.jsp">Página Inicial</a>
+            </div>
         </form>
     </div>
 </div>
+
+<script>
+    // Adicionar evento de submit ao formulário
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Previne envio padrão do formulário
+
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+
+        if (email && senha) {
+            // Dados para enviar ao servlet
+            const data = {
+                email: email,
+                senha: senha
+            };
+
+            // Enviar os dados como JSON usando fetch
+            fetch('LoginServlet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            alert('Bem-vindo, ' + result.userName + '!');
+                            window.location.href = '${pageContext.request.contextPath}/exame.jsp'; // Redirecionar após login bem-sucedido
+                        } else {
+                            alert('Login ou senha incorretos. Tente novamente.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao processar a solicitação:', error);
+                        alert('Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde.');
+                    });
+        } else {
+            alert('Por favor, preencha todos os campos.');
+        }
+    });
+</script>

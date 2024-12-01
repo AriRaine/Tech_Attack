@@ -53,7 +53,7 @@
                         </button>
                     </div>
                     <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
-                        <a href="${pageContext.request.contextPath}/users.jsp">Página Inicial</a>
+                        <a href="${pageContext.request.contextPath}/users.jsp">Login</a>
                     </div>
                 </form>
 
