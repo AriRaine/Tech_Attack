@@ -52,8 +52,8 @@
                             <i class="bi bi-send"></i> Enviar
                         </button>
                     </div>
-                    <div class="col-12 text-center">
-                        <button type="button" id="backButton" style="display: none;" onclick="window.location.href = 'login.jsp'">Voltar ao Login</button>
+                    <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
+                        <a href="${pageContext.request.contextPath}/users.jsp">Página Inicial</a>
                     </div>
                 </form>
 

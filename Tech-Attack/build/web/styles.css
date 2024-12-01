@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 body {
     background: url('background-image.png') no-repeat center center fixed; /* Substitua 'background-image.png' pelo caminho da sua imagem PNG */
     background-size: cover;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Open Sans', Arial, sans-serif !important; /* Aplicando !important */
 }
 
 header h1 {

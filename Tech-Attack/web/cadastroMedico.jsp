@@ -51,9 +51,6 @@
                         <button type="submit" class="btn btn-primary">
                             <i class="bi bi-send"></i> Enviar
                         </button>
-                        <button type="button" class="btn btn-secondary" id="backButton" style="display:none;">
-                            Tela de login
-                        </button>
                     </div>
                     <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
                         <a href="${pageContext.request.contextPath}/users.jsp">Página Inicial</a>

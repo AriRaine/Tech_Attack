@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 <%
-            if (request.getParameter("invoke") != null) {
+            if (request.getParameter("imagePath") != null) {
                 try {
                     String prompt = request.getParameter("prompt");
                     String completion = DevOpenAI.getCompletion(prompt);

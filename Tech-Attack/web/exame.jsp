@@ -54,8 +54,8 @@
                     <input type="number" class="form-control" id="inputAlt" min="0" step="0.1" placeholder="Ex: 175.5" name="altura" required>
                 </div>
                 <div class="col-12">
-                    <label for="inputUrl_img" class="form-label">URL da imagem</label>
-                    <input type="url" class="form-control" id="inputUrl_img" name="url_img" placeholder="imagem.com/imagem" required>
+                    <label for="inputUrl_img" class="form-label">Endereço da imagem</label>
+                    <input type="url" class="form-control" id="inputUrl_img" name="url_img"  required>
                 </div>
                 <div class="col-12">
                     <label for="inputRegistroFuncionario" class="form-label">Registro Funcionário</label>
@@ -130,7 +130,7 @@
                 })
                 .then(result => {
                     alert('Cadastro realizado com sucesso!');
-                    window.location.href = 'exame.jsp'; // Redirecionar após sucesso
+                    window.location.href = '${pageContext.request.contextPath}/analyze_gemini.jsp'; // Redirecionar após sucesso
                 })
                 .catch(error => {
                     console.error('Erro:', error);
