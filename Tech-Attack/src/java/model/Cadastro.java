@@ -5,11 +5,11 @@
 package model;
 
 public abstract class Cadastro {
+
     private String nome;
     private String sobrenome;
     private String email;
     private String senha;
-
 
     public Cadastro(String nome, String sobrenome, String email, String senha) {
         this.nome = nome;

@@ -18,7 +18,7 @@
                     request.setAttribute("error", ex.getMessage());
                 }
             }
-        %>
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,7 +26,7 @@
     </head>
     <body>
         <h1>Meu Próprio ChatGPT</h1>
-        
+
         <%@include file="WEB-INF/jspf/html-head-libs.jspf" %>
 
         <%
@@ -45,7 +45,7 @@
             <input type="submit" name="invoke" value="Enviar"/>
         </form>
 
-       <%@include file="WEB-INF/jspf/html-body-libs.jspf" %>
-       
+        <%@include file="WEB-INF/jspf/html-body-libs.jspf" %>
+
     </body>
 </html>

@@ -14,8 +14,7 @@ public class InserirDadosFuncionario {
     public static void inserirFuncionario(String registro, String nome, String sobrenome, String email, String senha) {
         String sql = "INSERT INTO Funcionario (registro, nome, sobrenome, email, senha) VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setString(1, registro);
             pstmt.setString(2, nome);
@@ -35,9 +34,7 @@ public class InserirDadosFuncionario {
     public static void listarFuncionarios() {
         String sql = "SELECT registro, nome, sobrenome, email FROM Funcionario";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery()) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
                 System.out.println("Registro: " + rs.getString("registro"));
@@ -55,8 +52,7 @@ public class InserirDadosFuncionario {
     public static void atualizarFuncionario(String registro, String nome, String sobrenome, String email, String senha) {
         String sql = "UPDATE Funcionario SET nome = ?, sobrenome = ?, email = ?, senha = ? WHERE registro = ?";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setString(1, nome);
             pstmt.setString(2, sobrenome);
@@ -80,8 +76,7 @@ public class InserirDadosFuncionario {
     public static void excluirFuncionario(String registro) {
         String sql = "DELETE FROM Funcionario WHERE registro = ?";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setString(1, registro);
 

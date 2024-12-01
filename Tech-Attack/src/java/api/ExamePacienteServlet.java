@@ -86,7 +86,7 @@ public class ExamePacienteServlet extends HttpServlet {
             }
 
             examePaciente.list.add(paciente);
-            
+
             file.put("list", new JSONArray(examePaciente.list));
             response.setStatus(201);
         } catch (IOException | JSONException ex) {

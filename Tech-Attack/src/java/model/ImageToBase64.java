@@ -16,7 +16,7 @@ public class ImageToBase64 {
         // Carregar o arquivo de imagem
         File imageFile = new File(imagePath);
         byte[] imageBytes = Files.readAllBytes(imageFile.toPath()); // Ler bytes da imagem
-        
+
         // Codificar em Base64
         return Base64.getEncoder().encodeToString(imageBytes);
     }

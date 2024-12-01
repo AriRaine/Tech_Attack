@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class Funcionario extends Cadastro {
 
-     private String registro;
-     
+    private String registro;
+
     public static List<Funcionario> list = new ArrayList<>();
 
     public Funcionario(String nome, String sobrenome, String email, String senha, String registro) {
@@ -36,4 +36,3 @@ public class Funcionario extends Cadastro {
         return registro;
     }
 }
-

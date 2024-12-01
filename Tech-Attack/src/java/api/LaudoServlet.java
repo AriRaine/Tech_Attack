@@ -135,8 +135,7 @@ public class LaudoServlet extends HttpServlet {
 
         response.getWriter().print(file.toString());
     }
-    
-    
+
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json;charset=UTF-8");

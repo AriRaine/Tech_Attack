@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoSQLite {
+
     private static final String URL = "jdbc:sqlite:C:/Users/tatco/Documents/BD-projeto/tech-attack";
 
     public static Connection conectar() {

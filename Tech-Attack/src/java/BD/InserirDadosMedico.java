@@ -7,14 +7,12 @@ package BD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-
 public class InserirDadosMedico {
 
     public static void inserirMedico(String crm, String nome, String sobrenome, String email, String senha) {
         String sql = "INSERT INTO Medico (crm, nome, sobrenome, email, senha) VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setString(1, crm);
             pstmt.setString(2, nome);

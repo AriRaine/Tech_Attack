@@ -57,8 +57,7 @@ public class InicializarBanco {
             );
         """;
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             Statement stmt = conexao.createStatement()) {
+        try (Connection conexao = ConexaoSQLite.conectar(); Statement stmt = conexao.createStatement()) {
 
             // Cria cada tabela
             stmt.execute(tabelaFuncionario);

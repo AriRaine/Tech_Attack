@@ -23,8 +23,7 @@ public class InserirDadosLaudo {
 
         String sql = "INSERT INTO Laudo (idExame, texto_laudo, crmMedico) VALUES (?, ?, ?)";
 
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setInt(1, idExame);
             pstmt.setString(2, textoLaudo);
@@ -40,8 +39,7 @@ public class InserirDadosLaudo {
 
     private static boolean exameExiste(int idExame) {
         String sql = "SELECT 1 FROM Exame WHERE id = ?";
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setInt(1, idExame);
             ResultSet rs = pstmt.executeQuery();
@@ -55,8 +53,7 @@ public class InserirDadosLaudo {
 
     private static boolean laudoExiste(int idExame) {
         String sql = "SELECT 1 FROM Laudo WHERE idExame = ?";
-        try (Connection conexao = ConexaoSQLite.conectar();
-             PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        try (Connection conexao = ConexaoSQLite.conectar(); PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
             pstmt.setInt(1, idExame);
             ResultSet rs = pstmt.executeQuery();

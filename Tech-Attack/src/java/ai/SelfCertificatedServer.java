@@ -11,6 +11,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 public class SelfCertificatedServer {
+
     public static HttpClient getHttpClient() {
         try {
             // Configuração para confiar em todos os certificados

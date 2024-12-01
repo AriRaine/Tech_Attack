@@ -119,7 +119,7 @@ public class examePaciente {
     public void setUrl_img(String url_img) {
         this.url_img = url_img;
     }
-    
+
     public String getRegistroFuncionario() {
         return registroFuncionario;
     }

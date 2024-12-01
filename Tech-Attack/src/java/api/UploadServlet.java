@@ -11,14 +11,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-import org.json.JSONArray;
-import org.json.JSONObject; // Importando a biblioteca JSON
 
 @WebServlet("/upload")
 @MultipartConfig(
-    fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-    maxFileSize = 1024 * 1024 * 10,      // 10MB
-    maxRequestSize = 1024 * 1024 * 50   // 50MB
+        fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+        maxFileSize = 1024 * 1024 * 10, // 10MB
+        maxRequestSize = 1024 * 1024 * 50 // 50MB
 )
 public class UploadServlet extends HttpServlet {
 
@@ -40,8 +38,7 @@ public class UploadServlet extends HttpServlet {
             String fileName = extractFileName(part);
             if (fileName != null && !fileName.isEmpty()) {
                 String filePath = UPLOAD_DIR + File.separator + fileName;
-                try (FileOutputStream fos = new FileOutputStream(filePath);
-                     InputStream is = part.getInputStream()) {
+                try (FileOutputStream fos = new FileOutputStream(filePath); InputStream is = part.getInputStream()) {
 
                     byte[] buffer = new byte[1024];
                     int bytesRead;

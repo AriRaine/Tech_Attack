@@ -19,7 +19,6 @@ import org.json.JSONObject;
  *
  * @author tatiane
  */
-
 public class DevOpenAI {
 
     private static final String API_KEY = "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";
