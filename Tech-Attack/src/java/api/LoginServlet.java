@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
 
-                // Verificar se é o admin
+            // Verificar se é o admin
             if (email.equals("admin@email.com") && senha.equals("admin123")) {
                 HttpSession session = request.getSession();
                 session.setAttribute("name", "Admin");
