@@ -33,7 +33,7 @@ O principal propósito da aplicação é agilizar e otimizar a análise de ECGs,
   Frontend: HTML, CSS, JavaScript
   Backend: Java (utilizando GlassFish como servidor de aplicação)
   Integração com IA: API da OpenAI para análise do ECG
-  Banco de Dados: MySQL para armazenar dados dos pacientes e laudos
+  Banco de Dados: SQLite para armazenar dados dos pacientes e laudos
   Hospedagem: GlassFish como servidor de aplicação
 
 ## 7. Autores
