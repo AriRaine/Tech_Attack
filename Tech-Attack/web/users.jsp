@@ -17,10 +17,8 @@
         <%if (userName != null) { %>
         <div style="margin: 50px auto 0; width: 80%; max-width: 600px; text-align: center; background: lightblue; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
             <h3>Bem vindo(a), </h3>
-            <%for (String user : users) {%>
-            <h4> <div><%= user %></div></h4>
+            <h4> <div><%= userName %></div></h4>
             <h5>Navegue pela página, através do nosso menu superior.</h5> 
-            <% }%>
         </div>
         <% }%>
 

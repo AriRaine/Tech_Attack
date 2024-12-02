@@ -14,21 +14,7 @@
                 <input type="password" class="form-control" id="senha" name="senha" required>
             </div>
             <input type="submit" class="btn btn-primary" value="Entrar"/>
-            <div class="dropdown mt-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    Não tem cadastro? Cadastrar
-                </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroMedico.jsp">Médico</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroFuncionario.jsp">Funcionário</a></li>
-            </ul>
-            </div>
-            <div class="d-flex justify-content-between mt-3">
-                <a href="${pageContext.request.contextPath}/redefinirSenha.jsp" class="btn btn-link">Esqueci a senha</a>
-            </div>
-            <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
-                <a href="${pageContext.request.contextPath}/index.jsp">Página Inicial</a>
-            </div>
+
         </form>
     </div>
 </div>
@@ -60,7 +46,7 @@
                     .then(result => {
                         if (result.success) {
                             alert('Bem-vindo, ' + result.userName + '!');
-                            window.location.href = '${pageContext.request.contextPath}/exame.jsp'; // Redirecionar após login bem-sucedido
+                            window.location.href = '${pageContext.request.contextPath}/users.jsp'; // Redirecionar após login bem-sucedido
                         } else {
                             alert('Login ou senha incorretos. Tente novamente.');
                         }

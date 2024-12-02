@@ -52,8 +52,9 @@
                             <i class="bi bi-send"></i> Enviar
                         </button>
                     </div>
-                    <div class="form-text" id="basic-addon4" style="font-size:12px; text-align: right;">
-                        <a href="${pageContext.request.contextPath}/users.jsp">Login</a>
+                    <div class="form-text" id="basic-addon4" style="font-size:13px; text-align: right; display: flex; justify-content: space-between; align-items: center;">
+                        <a href="${pageContext.request.contextPath}/users.jsp">Fazer Login</a>
+                        <a href="${pageContext.request.contextPath}/index.jsp">Página Inicial</a>
                     </div>
                 </form>
 

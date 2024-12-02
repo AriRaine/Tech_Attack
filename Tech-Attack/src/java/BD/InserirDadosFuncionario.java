@@ -109,13 +109,13 @@ public class InserirDadosFuncionario {
         testarConexao(); // Testa a conexão com o banco de dados
 
         // Insere um funcionário de exemplo
-        inserirFuncionario("12347", "Carlos", "Oliveira", "carlosneiva@email.com", "senha456");
+        inserirFuncionario("23456", "Test2", "Oliveira", "Test2@email.com", "senha456");
 
         // Lista todos os funcionários
         listarFuncionarios();
 
         // Atualiza um funcionário
-        atualizarFuncionario("12347", "Carlos", "Silva", "carlosHenriquenovo@email.com", "novaSenha456");
+        atualizarFuncionario("23456", "Carlos", "Silva", "carlosHenriquenovo@email.com", "novaSenha456");
 
         // Lista novamente para verificar a atualização
         listarFuncionarios();

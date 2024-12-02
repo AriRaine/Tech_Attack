@@ -42,7 +42,7 @@
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/upload.jsp">Upload</a></li>
             <% } %>
         </ul>
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/users.jsp">Teck Attack</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Teck Attack</a>
     </div>
 </nav>
 

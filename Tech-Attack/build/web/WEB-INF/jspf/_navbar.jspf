@@ -7,11 +7,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroMedico.jsp">Médico</a></li>
-                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroFuncionario.jsp">Funcionário</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroMedico.jsp" style="color: #ffffff">Médico</a></li>
+                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cadastroFuncionario.jsp" style="color: #ffffff">Funcionário</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/redefinirSenha.jsp">Redefinir Senha</a></li>
         </ul>
         <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Teck Attack</a>
     </div>
