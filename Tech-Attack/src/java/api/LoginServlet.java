@@ -51,6 +51,19 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
 
+                // Verificar se é o admin
+            if (email.equals("admin@email.com") && senha.equals("admin123")) {
+                HttpSession session = request.getSession();
+                session.setAttribute("name", "Admin");
+
+                jsonResponse.put("success", true);
+                jsonResponse.put("message", "Login bem-sucedido.");
+                jsonResponse.put("userName", "Admin");
+                response.setStatus(200);
+                response.getWriter().print(jsonResponse.toString());
+                return;
+            }
+
             // Conectar ao banco de dados e verificar login
             try (Connection connection = DriverManager.getConnection("jdbc:sqlite:C:/Users/tatco/Documents/BD-projeto/tech-attack")) {
                 String sql = "SELECT nome FROM Funcionario WHERE email = ? AND senha = ? UNION SELECT nome FROM Medico WHERE email = ? AND senha = ?";
