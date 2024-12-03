@@ -12,6 +12,6 @@
                 </ul>
             </li>
         </ul>
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Teck Attack</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Tech Attack</a>
     </div>
 </nav>
