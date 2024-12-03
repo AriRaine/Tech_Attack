@@ -35,14 +35,14 @@ O principal propósito da aplicação é agilizar e otimizar a análise de ECGs,
   Você pode baixar o projeto em sua máquina em *<>Code* e depois em *Download ZIP*.
 
 ## 7. Como Executar o Projeto
-  1. *Descompactação do Projeto:* Feito o download do projeto, descompacte o arquivo que está em formato ZIP.
-  2. *Abrir o Projeto no NetBeans:* Utilize a IDE *NetBeans* para abrir e executar o projeto.
-  3. *Configuração do Banco de Dados:* Inicie o SQLite e crie um *novo database*. 
+  1. ***Descompactação do Projeto:*** Feito o download do projeto, descompacte o arquivo que está em formato ZIP.
+  2. ***Abrir o Projeto no NetBeans:*** Utilize a IDE *NetBeans* para abrir e executar o projeto.
+  3. ***Configuração do Banco de Dados:*** Inicie o SQLite e crie um *novo database*. 
                                        Copie o caminho do *seu* banco e cole por cima do caminho que está no *private static final* na classe *ConexaoSQLite.java*.
                                        Realize o run na classe *ConexaoSQLite.java* e *InicializarBanco.java*
                                        Depois, realize o run nas outras classes em sequência para criar as tabelas no banco.
-  4. *Deploy no GlassFish:* Certifique-se de que o *GlassFish 7.0.0* está instalado e em execução.
-  5. *Acesso*: Realize o run no projeto e acesse a aplicação em http://localhost:8080/Tech-Attack.
+  4. ***Deploy no GlassFish:*** Certifique-se de que o *GlassFish 7.0.0* está instalado e em execução.
+  5. ***Acesso***: Realize o run no projeto e acesse a aplicação em http://localhost:8080/Tech-Attack.
 
 ## 8. Tecnologias Utilizadas
   Frontend: HTML, CSS, JavaScript
