@@ -22,34 +22,35 @@ O principal propósito da aplicação é agilizar e otimizar a análise de ECGs,
 ![Status](https://img.shields.io/badge/STATUS-em_desenvolvimento-blue)
 
 ## 4. Público-alvo
-  *Funcionários*: Usuários que farão o upload das imagens de ECG para análise.
-  *Médicos*: Profissionais de saúde que visualizarão os laudos e poderão validá-los.
+  ***Funcionários:*** Usuários que farão o upload das imagens de ECG para análise.  
+  ***Médicos:*** Profissionais de saúde que visualizarão os laudos e poderão validá-los.  
 
 ## 5. Funcionalidades
-  *Upload de Imagens de ECG*: Interface para upload de imagens em JPG, PNG e PDF.
-  *Análise Automática de ECG*: Utilização de IA para identificar alterações no ECG e gerar um laudo preliminar.
-  *Geração de Laudo Preliminar*: Laudo automaticamente gerado com base na análise do ECG.
-  *Integração com EMR*: Integração com prontuários eletrônicos para o registro dos laudos.
+  ***Upload de Imagens de ECG:*** Interface para upload de imagens em JPG, PNG e PDF.  
+  ***Análise Automática de ECG:*** Utilização de IA para identificar alterações no ECG e gerar um laudo preliminar.  
+  ***Geração de Laudo Preliminar:*** Laudo automaticamente gerado com base na análise do ECG.  
+  ***Integração com EMR:*** Integração com prontuários eletrônicos para o registro dos laudos.  
 
 ## 6. Como Acessar o Projeto
   Você pode baixar o projeto em sua máquina em *<>Code* e depois em *Download ZIP*.
 
 ## 7. Como Executar o Projeto
-  1. ***Descompactação do Projeto:*** Feito o download do projeto, descompacte o arquivo que está em formato ZIP.
-  2. ***Abrir o Projeto no NetBeans:*** Utilize a IDE *NetBeans* para abrir e executar o projeto.
-  3. ***Configuração do Banco de Dados:*** Inicie o SQLite e crie um *novo database*.  
-                                       Copie o caminho do *seu* banco e cole por cima do caminho que está no *private static final* na classe *ConexaoSQLite.java*.  
-                                       Realize o run na classe *ConexaoSQLite.java* e *InicializarBanco.java*.  
-                                       Depois, realize o run nas outras classes em sequência para criar as tabelas no banco.  
-  4. ***Deploy no GlassFish:*** Certifique-se de que o *GlassFish 7.0.0* está instalado e em execução.
-  5. ***Acesso***: Realize o run no projeto e acesse a aplicação em http://localhost:8080/Tech-Attack.
+  1. ***Descompactação do Projeto:*** Após fazer o download do projeto, descompactar o arquivo que está em formato ZIP.
+  2. ***Abrir o Projeto no NetBeans:*** Utilizar a IDE *NetBeans* para abrir e executar o projeto.
+  3. ***Deploy no GlassFish:*** Certificar-se de que o *GlassFish 7.0.0* está instalado e em execução.
+  4. ***Configuração do Banco de Dados:*** 
+                                       - Iniciar o SQLite e criar um *novo database*.  
+                                       - Copiar o caminho do *seu* banco e colar por cima do caminho que está no *private static final* na classe *ConexaoSQLite.java*.  
+                                       - Realizar o run na classe *ConexaoSQLite.java* e *InicializarBanco.java*.  
+                                       - Depois, realizar o run nas outras classes em sequência para criar as tabelas no banco.  
+  5. ***Acesso***: Realizar o run no projeto e acessar a aplicação em http://localhost:8080/Tech-Attack.
 
 ## 8. Tecnologias Utilizadas
-  Frontend: HTML, CSS, JavaScript
-  Backend: Java (utilizando GlassFish como servidor de aplicação)
-  Integração com IA: API da OpenAI para análise do ECG
-  Banco de Dados: SQLite para armazenar dados dos pacientes e laudos
-  Hospedagem: GlassFish como servidor de aplicação
+  ***Frontend:*** HTML, CSS, JavaScript  
+  ***Backend:*** Java (utilizando GlassFish como servidor de aplicação)  
+  ***Integração com IA:*** API da OpenAI para análise do ECG  
+  ***Banco de Dados:*** SQLite para armazenar dados dos pacientes e laudos  
+  ***Hospedagem:*** GlassFish como servidor de aplicação
 
 ## 9. Autores
   - [Beatriz Silva Santos](https://github.com/BeatrizS97)
