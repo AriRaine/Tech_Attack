@@ -27,7 +27,7 @@ import java.net.http.HttpResponse;
 @WebServlet("/analyzeECG")
 public class ECGAnalyzerServlet extends HttpServlet {
 
-    private static final String API_KEY = "AIzaSyB8HRaaphYwRznIWaNeOem56Zp0jMDyj08"; // Substitua pela chave correta
+    private static final String API_KEY = "SUA_CHAVE_GEMINI"; // Substitua pela chave correta
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + API_KEY;
 
     // Função para redimensionar a imagem

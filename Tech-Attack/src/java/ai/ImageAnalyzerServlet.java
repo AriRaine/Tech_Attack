@@ -30,7 +30,7 @@ import javax.net.ssl.X509TrustManager;
 @WebServlet("/analyzeImage")
 public class ImageAnalyzerServlet extends HttpServlet {
 
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "SUA_CHAVE_OPENAI";
     private static final HttpClient httpClient = createHttpClient();
 
     private static HttpClient createHttpClient() {
