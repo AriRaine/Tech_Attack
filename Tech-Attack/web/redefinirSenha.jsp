@@ -54,33 +54,32 @@
             }
 
             if (email && newPassword) {
-                const data = {email, senha: newPassword};
+                const data = { email, novaSenha: newPassword }; // Correção aqui
 
-                fetch("ResetPasswordServlet", {
+                fetch("${pageContext.request.contextPath}/RedefinirSenha", { // URL corrigida
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(data),
                 })
-                        .then(response => response.json())
-                        .then(result => {
-                            if (result.success) {
-                                alert(result.message);
-                                document.getElementById("resetPasswordForm").reset();
-                                window.location.href = "${pageContext.request.contextPath}/index.jsp";
-                            } else {
-                                alert(result.error || "Erro ao redefinir senha.");
-                            }
-                        })
-                        .catch(error => {
-                            console.error("Erro:", error);
-                            alert("Ocorreu um erro ao processar sua solicitação.");
-                        });
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            alert(result.message);
+                            document.getElementById("resetPasswordForm").reset();
+                            window.location.href = "${pageContext.request.contextPath}/index.jsp";
+                        } else {
+                            alert(result.error || "Erro ao redefinir senha.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Erro:", error);
+                        alert("Ocorreu um erro ao processar sua solicitação.");
+                    });
             } else {
                 alert("Por favor, preencha todos os campos.");
             }
         });
     </script>
 </html>
-

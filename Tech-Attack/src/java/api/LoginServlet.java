@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
             }
 
             // Conectar ao banco de dados e verificar login
-            try (Connection connection = DriverManager.getConnection("jdbc:sqlite:C:/Users/tatco/Documents/BD-projeto/tech-attack")) {
+            try (Connection connection = DriverManager.getConnection("jdbc:sqlite:C:/Program Files/SQLiteStudio/tech-attack")) {
                 String sql = "SELECT nome FROM Funcionario WHERE email = ? AND senha = ? UNION SELECT nome FROM Medico WHERE email = ? AND senha = ?";
                 try (PreparedStatement statement = connection.prepareStatement(sql)) {
                     statement.setString(1, email);
